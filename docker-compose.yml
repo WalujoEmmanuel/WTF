@@ -1,0 +1,13 @@
+version: '3'
+services: 
+  web:
+    build:
+      context: .
+    env_file: 
+      - ./config.env
+    command: yarn start:dev
+    volumes: 
+      - .:/app/
+      - /app/node_modules
+    ports:
+      - "9000:9000"
